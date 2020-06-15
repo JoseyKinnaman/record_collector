@@ -1,8 +1,7 @@
 class AlbumsController < ApplicationController
  
   def homepage
-    
-    render :index
+    render :homepage
   end
   
   def index
@@ -21,13 +20,9 @@ class AlbumsController < ApplicationController
       redirect_to albums_path
     else  
       render :new
+    end
   end
-
-  def edit
-    @album = Album.find(params[:id])
-    render :edit
-  end
-
+  
   def show
     @album = Album.find(params[:id])
     render :show
