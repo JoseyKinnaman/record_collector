@@ -7,9 +7,20 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap" rel="stylesheet">
   </head>
-
   <body>
+    <ul class="navigation">
+    <li><a class="navButton" href="/homepage">Home</a></li>
+    <br>
+    <li><a class="navButton" href="/users/sign_up">Sign-up</a></li>
+    <br>
+    <li><a class="navButton" href="/users/sign_in">Login</a></li>
+    <br>
+    <li><a class="navButton" href="/users/sign_out" data-method="delete" value="<%= destroy_user_session_path%>">Sign-out</a></li>
+    <br>
+    <li><a class="navButton" href="/albums" >My Collection</a></li>
+  </ul>
     <%= yield %>
   </body>
 </html>

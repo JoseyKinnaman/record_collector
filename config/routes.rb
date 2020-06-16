@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: 'albums#index'
+  root to: 'albums#homepage'
+  get 'homepage' => 'albums#homepage'
   resources :albums
+  devise_for :users
   get '/search' => 'albums#search'
   get '/tracks/:id' => 'albums#tracks'
 

@@ -1,7 +1,11 @@
 class AlbumsController < ApplicationController
-
   def index
     @albums = Album.all
+    current_user
+  end
+
+  def homepage
+    render :homepage
   end
 
   def search
@@ -20,9 +24,10 @@ class AlbumsController < ApplicationController
     @tracks= Album.album_songs(params[:id])
     render :album_detail
   end
-
+  
   def new
-    @album = ALbum.new
+    @album = Album.new
+    render :new
   end
 
   def create
@@ -45,34 +50,18 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
     if @album.update(album_params)
       redirect_to '/'
+    else
+      render :edit
     end
   end
 
   def destroy
     @album = Album.find(params[:id])
-    @album.destroy
-    redirect_to '/'
+    @album.destroy 
   end
 
   private
-  def album_params
-    params.require(:album).permit(:name, :artist, :cover_image, :link, :discog_id)
-  end
+    def album_params
+      params.require(:name, :discog_id, :artist, :cover_image, :link, :genre).permit(:id)
+    end
 end
-
-
-# album_name = result.title.split(' ')
-#     artist = before - 
-#     album = after - 
-# @search_results.any?
-#   @search_results.each do |result|
-#     result.id
-#     result.title = artist name & album title 
-#     <button> Add to my collection</button>
-#     if click button ^ 
-#       album.create!
-#         current_user & response.id 
-
-
-#   if result.type == "artist"
-#     artist = result.title
