@@ -5,6 +5,10 @@ body {
   background-attachment: fixed;
   background-position: center;
 }
+:root {
+  --foo: opacity: transparency;
+}
+
 // color palete :
 // timberwolf #CFDBD5
 // yellow #F5CB5C
@@ -29,16 +33,16 @@ body {
   border-radius: 8px;
 }
 
-img.bg {
-  opacity: 0.5;
-  // border-radius: 8px;
-  // max-width: 100%;
-  // height: auto;
-  // display: block;
-  // margin-top: 25%;
-  // margin-left: auto;
-  // margin-right: auto;
-}
+// img.body {
+//   opacity: 0.5;
+//   // border-radius: 8px;
+//   // max-width: 100%;
+//   // height: auto;
+//   // display: block;
+//   // margin-top: 25%;
+//   // margin-left: auto;
+//   // margin-right: auto;
+// }
 
 ul {
   list-style: none;
@@ -69,3 +73,19 @@ ul {
   text-decoration: none;
   border: 1px solid, white;
 }
+
+.container {
+  background: #F5CB5C;
+  padding: 15px;
+  margin: 75px;
+  color: #333533;
+  font-weight: bold;
+  // font-size: 2em;
+  // text-align: center;
+  font-family: 'MuseoModerno', cursive;
+  border-radius: 8px;
+  // opacity: 0.75;
+  width: 250px;
+  height: 300px;
+}
+
