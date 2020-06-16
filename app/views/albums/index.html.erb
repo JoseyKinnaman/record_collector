@@ -6,8 +6,22 @@
 </aside>
 
 <main class="mainContent">
+<h1> Search and add items to your collection:</h1>
+<br>
+<div class="flex_container">
+     <%if @albums.any?%>
+    <% @albums.each do |album| %>
+   <ul> 
+     <li class="flex-item"><%= album.name %></li> 
+     <% end %>
+  </ul>
+   <% else %>
+            <p>There are no products yet.</p>
+          <% end %>
+</div>
 
-<%# <h1> Search and add items to your collection:</h1>
+
+<%# 
     <%= form_tag(albums_path, method:get) do %>
         <%# <%= text_field_tag(:search, params[:search]) %>
         <%# <%= submit_tag (Search) %> 
