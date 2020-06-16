@@ -1,13 +1,13 @@
 <%# FROM BACK END %>
-<% if @albums.any? %>
-  <%@albums.each do |album|%>
-    <p>Album Name: <%= album.name %></p>
-    Artist : <%= album.artist %>
-    Cover Image: <%= album.cover_image %>
-  <% end %>
-<% else %>
-  there are currently no albums to list!
-<% end %>
+<%# <% if @albums.any? %>
+  <%# <%@albums.each do |album|%> %>
+    <%# <p>Album Name: <%= album.name %></p> %>
+    <%# Artist : <%= album.artist %> %>
+    <%# Cover Image: <%= album.cover_image %> %>
+  <%# <% end %> %>
+<%# <% else %> %>
+  <%# there are currently no albums to list! %>
+<%# <% end %> %> %>
 
 <%# FROM FRONT END %>
 <div class=contentBody>
@@ -19,17 +19,18 @@
 
 <main class="mainContent">
 <h1> Search and add items to your collection:</h1>
+<%= link_to "Search", search_path() %>
 <br>
 <div class="flex_container">
-     <%if @albums.any?%>
+  <%if @albums.any?%>
     <% @albums.each do |album| %>
-   <ul> 
-     <li class="flex-item"><%= album.name %></li> 
-     <% end %>
-  </ul>
-   <% else %>
-            <p>There are no products yet.</p>
-          <% end %>
+      <ul> 
+        <li class="flex-item"><%= album.name %></li> 
+      </ul>
+    <% end %>
+  <% else %>
+    <p>There are no products yet.</p>
+  <% end %>
 </div>
 
 
