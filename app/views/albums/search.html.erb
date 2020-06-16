@@ -1,19 +1,26 @@
 <div class="search-bar">
   <form>
     <input type="text" class="form-control" name ="search_term" id="search" placeholder="enter search term">
-    <input type="text" class="form-control" name="type" placeholder="select search type">
+    <label for="select search type">Select Search Type</label>
+    <select class="form-control" id="search_type">
+      <option name="">Select An Option</option>
+      <option name="artist">Artist</option>
+      <option name="title">Album</option>
+      <option name="genre">Genre</option>
+      <option name="year">Year</option>
+    </select>
+  </div>
     <button type= "submit" class= "btn btn-dark">Search</button>
   <form>
 </div>
 
 <% if @search_results.any? %>
   <% @search_results.each do |result| %>
-    <p><%= result['title'] %></p>
+    <%= link_to "#{result['title']}", album_path("#{result['id']}") %>
     <p><%= result['id'] %></p>
     <p><img src="<%=result['cover_image']%>" alt=""></p>
+    
   <% end %>
-<% else %>
-   Looks like your search didn't return any results! Please try again!  
 <% end %>
 
 

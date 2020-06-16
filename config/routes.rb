@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'albums#index'
   resources :albums
   get '/search' => 'albums#search'
+  get '/tracks/:id' => 'albums#tracks'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

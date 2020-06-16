@@ -1,0 +1,10 @@
+- Shows all tracks on song for particular album & has button for adding this album to their 'collection'
+<% if @tracks.any? %>
+<ol>
+  <% @tracks.each do |track| %>
+   <li><%= track['title'] %></li>
+  <% end %>
+</ol>
+<% else %>
+  There are currently no tracks to display for this album
+<% end %>

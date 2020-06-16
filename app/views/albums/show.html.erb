@@ -1,0 +1,21 @@
+- album detail page
+- tracks & info on album 
+- button that 'add to my collection'
+when they press the button it 'create!' method for Album & grabs all params needed for creating an album for that users 'collection' -> join table
+<br>
+<h1><%= @artist['name'] %></h1>
+
+<h3>Albums By: <%= @artist['name']%></h3>
+
+<ul>
+  <% if @albums.any? %>
+    <%@albums.each do |album|%>
+      <li>album title: <a href="/tracks/<%=album['id']%>"> <%= album['title'] %> </a>
+      album year: <%= album['year'] %> 
+      
+      album id: <%= album['id'] %></li>
+    <% end %>
+  <% else %>
+    "This artist doesn't currently have any albums"
+  <% end %>
+</ul>
