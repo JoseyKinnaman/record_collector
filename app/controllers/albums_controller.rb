@@ -6,6 +6,7 @@ class AlbumsController < ApplicationController
   
   def index
     @albums = Album.all 
+    current_user
     render :index
   end
 

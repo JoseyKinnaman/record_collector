@@ -4,10 +4,9 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  font-family: 'MuseoModerno', cursive;
 }
-:root {
-  --foo: opacity: transparency;
-}
+
 
 // color palete :
 // timberwolf #CFDBD5
@@ -29,20 +28,19 @@ body {
   font-weight: bold;
   font-size: 2em;
   text-align: center;
-  font-family: 'MuseoModerno', cursive;
   border-radius: 8px;
 }
 
-// img.body {
-//   opacity: 0.5;
-//   // border-radius: 8px;
-//   // max-width: 100%;
-//   // height: auto;
-//   // display: block;
-//   // margin-top: 25%;
-//   // margin-left: auto;
-//   // margin-right: auto;
-// }
+img {
+  opacity: 0.75;
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 ul {
   list-style: none;
@@ -60,6 +58,7 @@ ul {
   width: 100%;
   border: 1px solid, white;
   font-family: 'MuseoModerno', cursive;
+  border-radius: 8px;
 }
 
 .navButton {
@@ -80,12 +79,43 @@ ul {
   margin: 75px;
   color: #333533;
   font-weight: bold;
-  // font-size: 2em;
-  // text-align: center;
   font-family: 'MuseoModerno', cursive;
   border-radius: 8px;
-  // opacity: 0.75;
   width: 250px;
   height: 300px;
 }
 
+.contentBody {
+  display: flex;
+  color: #333533 ;
+}
+
+.sidebar {
+  margin-top: 75px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 100px;
+  padding: 15px;
+  border-radius: 8px;
+  width: 20%;
+  background-color: #CFDBD5;
+  justify-content: space-evenly;
+  text-align: center; 
+}
+
+// .sidebar > h1 {
+// text-align: center; 
+// }
+
+.mainContent {
+  margin-top: 75px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 100px;
+  padding: 15px;
+  border-radius: 8px;
+  flex: 1;     
+  overflow: auto;
+  background-color: #F5CB5C;
+  opacity: .75;
+}

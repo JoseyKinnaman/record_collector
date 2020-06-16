@@ -1,18 +1,22 @@
+<div class=contentBody>
+<aside class="sidebar">
+    <h1> My Collection </h1>
+    <p> Welcome <%= current_user.email %></p>
+        <%= image_tag "IMG_5530.jpg" %>
+</aside>
 
-<div style="display: flex;">
-    <!-- Sidebar -->
-    <aside style="width: 30%;">
-        ...
-    </aside>
+<main class="mainContent">
 
-    <!-- Main -->
-    <main style="
-     
-        flex: 1;
+<%# <h1> Search and add items to your collection:</h1>
+    <%= form_tag(albums_path, method:get) do %>
+        <%# <%= text_field_tag(:search, params[:search]) %>
+        <%# <%= submit_tag (Search) %> 
+    <%# <% end %> 
 
-        
-        overflow: auto;
-    ">
-        ...
-    </main>
+    <%# <% @album.each do |album| %>
+    <%# <ul> %>
+        <%# <li> <%= link_to ... %> 
+    <%# </ul> %>
+    <%# <% end %> 
+</main>
 </div>
