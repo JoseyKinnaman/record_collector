@@ -1,0 +1,9 @@
+<% if @albums.any? %>
+  <%@albums.each do |album|%>
+    <p>Album Name: <%= album.name %></p>
+    Artist : <%= album.artist %>
+    Cover Image: <%= album.cover_image %>
+  <% end %>
+<% else %>
+  there are currently no albums to list!
+<% end %>
