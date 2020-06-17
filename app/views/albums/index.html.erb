@@ -29,12 +29,12 @@
         <%if current_user.albums.any?%>
           <% current_user.albums.each do |album| %>
               <ul> 
-                <%# <div class="flex_container"> %>
+                <div class="flex_container">
                   <li class="flex-item">
-                  <a href="<%=album.link%>" target="_blank"><img src="<%=album.cover_image%>" alt=""></a></li>
+                  <a href="<%=album.link%>" target="_blank"><img class="cover" src="<%=album.cover_image%>" alt=""></a></li>
                   <h4><%= album.artist %></h4>
                   <p><%= album.name %></p>
-                <%# </div> %>
+                </div>
               </ul>
           <% end %>
         <% else %>
