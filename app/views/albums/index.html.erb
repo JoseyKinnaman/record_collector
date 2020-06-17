@@ -15,7 +15,7 @@
       <h1> My Collection </h1>
       <%if current_user %>
         <p> Welcome <%= current_user.email %></p>
-          <%= image_tag "IMG_5530.jpg" %>
+          <%= image_tag "IMG_5530.jpg", class: "shelf" %>
       <% else %>
         <p> Please log-in to see this page!</p>
       <% end %>
@@ -28,7 +28,9 @@
       <%if current_user.albums.any?%>
         <% current_user.albums.each do |album| %>
           <ul> 
-            <li class="flex-item"><%= album.name %></li> 
+            <li class="flex-item">
+            <a href="<%=album.link%>" target="_blank"><img src="<%=album.cover_image%>" alt=""></a></li>
+            <p><%= album.name %></p>
           </ul>
         <% end %>
       <% else %>

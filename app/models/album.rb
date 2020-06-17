@@ -28,6 +28,12 @@ class Album < ApplicationRecord
   end
   
 
+  def self.image(album, artist)
+    results = HTTParty.get("http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + ENV["LASTFM_KEY"] + "&album=#{album}&artist=#{artist}&format=json")
+    results["album"]["image"][2]["#text"]
+  end
+
+
     
   # # final_result = {name: , artist: results.artist, }
   #   # two types for API calls will be artist, release title & genre?

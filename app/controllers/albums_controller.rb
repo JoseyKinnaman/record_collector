@@ -36,7 +36,8 @@ class AlbumsController < ApplicationController
    name = @album['title']
    discog_id = @album['id']
    artist = @album['artists'][0]['name']
-   cover_image = @album['images'][0]['resource_url']
+   @image = Album.image(name, artist)
+   cover_image = @image
    link = @album['uri']
    genre = @album['genres'][0]
    @new_album = Album.create!(name: name, discog_id: discog_id, artist: artist, cover_image: cover_image, link: link, genre: genre)

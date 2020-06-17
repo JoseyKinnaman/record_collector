@@ -43,7 +43,7 @@ Access Token URL    https://api.discogs.com/oauth/access_token
 <!-- back end -->
 * _adjust the api call for only vinyl?_
 * _save img links and other params on "add to collection"_
-* _join table_
+* _join table √_ 
 * _reroute user to user homepage after signin_
 * _get username into users table (or take out)_
 * _admin_
