@@ -21,7 +21,6 @@ class AlbumsController < ApplicationController
 
   def tracks
     @album = Album.find_album(params[:id])
- 
     @tracks= Album.album_songs(params[:id])
     render :album_detail
   end
@@ -43,11 +42,13 @@ class AlbumsController < ApplicationController
    @new_album = Album.create!(name: name, discog_id: discog_id, artist: artist, cover_image: cover_image, link: link, genre: genre)
     if @new_album.save 
       current_user.albums << @new_album   
-      redirect_to "/"
+      redirect_to "/albums"
     end
   end
 
-
+  def edit_collection
+    render :edit
+  end
 
   def edit
     @album = Album.find(params[:id])
@@ -70,6 +71,7 @@ class AlbumsController < ApplicationController
   def destroy
     @album = Album.find(params[:id])
     @album.destroy 
+    render :edit
   end
 
   private

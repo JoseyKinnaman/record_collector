@@ -1,6 +1,7 @@
 class Album < ApplicationRecord
   has_and_belongs_to_many(:users)
 
+
   # API CALLS
   def self.search(type, search_term)
     results = HTTParty.get("https://api.discogs.com/database/search?type=#{type}&q=#{search_term}&key=" + ENV["API_KEY"] + "&secret=" + ENV["API_SECRET"])
@@ -30,11 +31,13 @@ class Album < ApplicationRecord
 
   def self.image(album, artist)
     results = HTTParty.get("http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + ENV["LASTFM_KEY"] + "&album=#{album}&artist=#{artist}&format=json")
-    results["album"]["image"][2]["#text"]
+    # binding.pry
+    if results["album"]["image"][2]["#text"] == ""  
+      results = "https://www.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png"
+    else 
+      results["album"]["image"][2]["#text"]
+    end
   end
-
-
-    
   # # final_result = {name: , artist: results.artist, }
   #   # two types for API calls will be artist, release title & genre?
   # results.any?

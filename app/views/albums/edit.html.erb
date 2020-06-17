@@ -1,19 +1,6 @@
-<%# FROM BACK END %>
-<%# <% if @albums.any? %>
-  <%# <%@albums.each do |album|%> %>
-    <%# <p>Album Name: <%= album.name %></p> %>
-    <%# Artist : <%= album.artist %> %>
-    <%# Cover Image: <%= album.cover_image %> %>
-  <%# <% end %> %>
-<%# <% else %> %>
-  <%# there are currently no albums to list! %>
-<%# <% end %> %> %>
-
-<%# FROM FRONT END %>
 <div class=contentBody>
   <aside class="sidebar">
       <h1> My Collection </h1>
-      <%= link_to "edit collection", edit_collection_path %>
       <%if current_user %>
         <p> Welcome <%= current_user.email %></p>
           <%= image_tag "IMG_5530.jpg", class: "shelf" %>
@@ -21,7 +8,6 @@
         <p> Please log-in to see this page!</p>
       <% end %>
   </aside>
-
   <main class="mainContent">
     <h1>Existing Records</h1>
     <br>
@@ -30,9 +16,12 @@
         <% current_user.albums.each do |album| %>
           <ul> 
             <li class="flex-item">
+               
             <a href="<%=album.link%>" target="_blank"><img src="<%=album.cover_image%>" alt=""></a></li>
             <h4><%= album.artist %></h4>
             <p><%= album.name %></p>
+            <%= button_to "delete album", album_path(album.id), method: :delete  %>
+            
           </ul>
         <% end %>
       <% else %>
@@ -41,15 +30,3 @@
     </div>
   </main>
 </div>
-
-<%# 
-    <%= form_tag(albums_path, method:get) do %>
-        <%# <%= text_field_tag(:search, params[:search]) %>
-        <%# <%= submit_tag (Search) %> 
-    <%# <% end %> 
-
-    <%# <% @album.each do |album| %>
-    <%# <ul> %>
-        <%# <li> <%= link_to ... %> 
-    <%# </ul> %>
-    <%# <% end %> 

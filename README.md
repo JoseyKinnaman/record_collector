@@ -42,9 +42,6 @@ Access Token URL    https://api.discogs.com/oauth/access_token
 ## todo list
 <!-- back end -->
 * _adjust the api call for only vinyl?_
-* _save img links and other params on "add to collection"_
-* _join table √_ 
-* _reroute user to user homepage after signin_
 * _get username into users table (or take out)_
 * _admin_
 * _delete crud_
@@ -56,15 +53,7 @@ Access Token URL    https://api.discogs.com/oauth/access_token
 * _I want to be able to see the total value of my collection and the value of each album I own._
 * _phone capabilities_
 
-## todo list
-* _develop way to add albums to db
-* _reroute user to homepage after signin
-* _get username into users table
-* _ scopes for displaying, records by genre etc
-* _display users saved albums in mainContent
-* _work on search function
-* _project title
-* _fix login and signin views
+
 
 
 
