@@ -38,6 +38,7 @@ class Album < ApplicationRecord
       results["album"]["image"][2]["#text"]
     end
   end
+
   # # final_result = {name: , artist: results.artist, }
   #   # two types for API calls will be artist, release title & genre?
   # results.any?

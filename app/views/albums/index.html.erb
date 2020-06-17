@@ -25,20 +25,20 @@
   <main class="mainContent">
     <h1>Existing Records</h1>
     <br>
-    <div class="flex_container">
       <%if current_user.albums.any?%>
         <% current_user.albums.each do |album| %>
-          <ul> 
-            <li class="flex-item">
-            <a href="<%=album.link%>" target="_blank"><img src="<%=album.cover_image%>" alt=""></a></li>
-            <h4><%= album.artist %></h4>
-            <p><%= album.name %></p>
-          </ul>
+            <ul> 
+              <%# <div class="flex_container"> %>
+                <li class="flex-item">
+                <a href="<%=album.link%>" target="_blank"><img src="<%=album.cover_image%>" alt=""></a></li>
+                <h4><%= album.artist %></h4>
+                <p><%= album.name %></p>
+              <%# </div> %>
+            </ul>
         <% end %>
       <% else %>
         <p>There are no albums yet.</p>
       <% end %>
-    </div>
   </main>
 </div>
 
