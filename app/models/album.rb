@@ -23,6 +23,9 @@ class Album < ApplicationRecord
     final_results = results['tracklist']
   end
 
+  def self.find_album(album_id)
+    results = HTTParty.get("https://api.discogs.com/masters/#{album_id}")
+  end
   
 
     

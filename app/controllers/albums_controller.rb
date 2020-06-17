@@ -20,7 +20,8 @@ class AlbumsController < ApplicationController
   end
 
   def tracks
-    @album = Album.show(params[:id])
+    @album = Album.find_album(params[:id])
+ 
     @tracks= Album.album_songs(params[:id])
     render :album_detail
   end
@@ -29,13 +30,26 @@ class AlbumsController < ApplicationController
     @album = Album.new
     render :new
   end
+ 
+  def create 
+   @album = Album.find_album(params[:id])
+   name = @album['title']
+   discog_id = @album['id']
+   artist = @album['artists'][0]['name']
+   cover_image = @album['images'][0]['resource_url']
+   link = @album['uri']
+   genre = @album['genres'][0]
+    
+   @new_album = Album.create!(name: name, discog_id: discog_id, artist: artist, cover_image: cover_image, link: link, genre: genre)
+  
+    ## Need method for adding to join table using double arrow method. 
 
-  def create
-    @album = Album.new(album_params)
-    if @album.save
-      redirect_to '/'
+    if @new_album.save    
+      redirect_to "/"
     end
   end
+
+
 
   def edit
     @album = Album.find(params[:id])

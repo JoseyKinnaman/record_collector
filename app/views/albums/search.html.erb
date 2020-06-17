@@ -10,19 +10,20 @@
         <option name="genre">Genre</option>
         <option name="year">Year</option>
       </select>
-    </div>
       <button type= "submit" class= "btn btn-dark">Search</button>
     <form>
   </div>
+</div>
 
+<div class="searchContent">
   <% if @search_results.any? %>
     <% @search_results.each do |result| %>
-      <%= link_to "#{result['title']}", album_path("#{result['id']}") %>
-      <p><%= result['id'] %></p>
+      <%= link_to "#{result['title']}", album_path("#{result['id']}") %> <% result['id'] %></p>
       <p><img src="<%=result['cover_image']%>" alt=""></p>
       
     <% end %>
   <% end %>
 </div>
+
 
 

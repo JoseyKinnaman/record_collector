@@ -11,28 +11,32 @@
 
 <%# FROM FRONT END %>
 <div class=contentBody>
-<aside class="sidebar">
-    <h1> My Collection </h1>
-    <p> Welcome <%= current_user.email %></p>
-        <%= image_tag "IMG_5530.jpg" %>
-</aside>
+  <aside class="sidebar">
+      <h1> My Collection </h1>
+      <%if current_user %>
+        <p> Welcome <%= current_user.email %></p>
+          <%= image_tag "IMG_5530.jpg" %>
+      <% else %>
+        <p> Please log-in to see this page!</p>
+      <% end %>
+  </aside>
 
-<main class="mainContent">
-<h1> Search and add items to your collection:</h1>
-<%= link_to "Search", search_path() %>
-<br>
-<div class="flex_container">
-  <%if @albums.any?%>
-    <% @albums.each do |album| %>
-      <ul> 
-        <li class="flex-item"><%= album.name %></li> 
-      </ul>
-    <% end %>
-  <% else %>
-    <p>There are no products yet.</p>
-  <% end %>
+  <main class="mainContent">
+    <h1>Existing Records</h1>
+    <br>
+    <div class="flex_container">
+      <%if @albums.any?%>
+        <% @albums.each do |album| %>
+          <ul> 
+            <li class="flex-item"><%= album.name %></li> 
+          </ul>
+        <% end %>
+      <% else %>
+        <p>There are no albums yet.</p>
+      <% end %>
+    </div>
+  </main>
 </div>
-
 
 <%# 
     <%= form_tag(albums_path, method:get) do %>
@@ -45,5 +49,3 @@
         <%# <li> <%= link_to ... %> 
     <%# </ul> %>
     <%# <% end %> 
-</main>
-</div>
