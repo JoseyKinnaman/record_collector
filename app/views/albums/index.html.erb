@@ -14,13 +14,13 @@
   <div class=contentBody>
     <aside class="sidebar">
         <h1> My Collection </h1>
-        <%= link_to "edit collection", edit_collection_path %>
         <%if current_user %>
           <p> Welcome <%= current_user.email %></p>
             <%= image_tag "IMG_5530.jpg", class: "shelf" %>
         <% else %>
           <p> Please log-in to see this page!</p>
         <% end %>
+         <%= link_to "edit collection", edit_collection_path %>
     </aside>
 
     <main class="mainContent">
