@@ -1,0 +1,16 @@
+<br><br>
+<div class="searchContent">
+  <h3>Album: <%= @album['title'] %></h3>
+  <% if @tracks.any? %>
+  <p>List of songs:</p>
+  <ol>
+    <% @tracks.each do |track| %>
+    <li><%= track['title'] %></li>
+    <% end %>
+  </ol>
+  <% else %>
+    There are currently no tracks to display for this album
+  <% end %>
+
+<a href="/albums">Return to "My collection"</a>
+</div>

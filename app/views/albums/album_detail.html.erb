@@ -1,7 +1,11 @@
 - Shows all tracks on song for particular album & has button for adding this album to their 'collection'
+<br><br>
+
 
 <div class="searchContent">
+  <h3>Album: <%= @album['title'] %></h3>
   <% if @tracks.any? %>
+  <p>List of songs:</p>
   <ol>
     <% @tracks.each do |track| %>
     <li><%= track['title'] %></li>
@@ -15,7 +19,7 @@
       
 
 
-
+<%# 
  <form type="hidden" action="/albums/:id" method="post">
     <input type="hidden" class="form-control" name=  value="#{album['id']}">
     <input type="hidden" name="genre" value="#album['genre']">
@@ -24,4 +28,4 @@
     <input type="hidden" name="" value="#album['title]">
   </form>
  <button type="submit" name="submit" class="btn btn-primary">Add Photo</button>
-         
+          %>

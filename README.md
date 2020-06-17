@@ -56,6 +56,14 @@ Access Token URL    https://api.discogs.com/oauth/access_token
 * _project title
 * _fix login and signin views
 
+<!-- ---------front-end----------- -->
+* CSS for displaying records... tile, grid ? something cool..display users saved albums in mainContent
+* work on search function for searching a collection
+* project title
+* fix login and signin views (add authorizations for what a user can see)
+* add content to homepage
+* _general styling
+
 
 
 ## Technologies Used

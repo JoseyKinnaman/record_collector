@@ -45,7 +45,7 @@ class AlbumsController < ApplicationController
     ## Need method for adding to join table using double arrow method. 
 
     if @new_album.save    
-      redirect_to "/"
+      redirect_to "/albums"
     end
   end
 
@@ -58,6 +58,7 @@ class AlbumsController < ApplicationController
   def show
     @artist = Album.show(params[:id])
     @albums = Album.all_albums(@artist['id'])
+    # @album = Album.find(params[:id])
   end
 
   def update
@@ -73,6 +74,10 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
     @album.destroy 
   end
+
+  # def display
+  #   @albums = Album.all
+  # end
 
   private
     def album_params

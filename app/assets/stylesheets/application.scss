@@ -31,6 +31,10 @@ body {
   border-radius: 8px;
 }
 
+.flex-item > a {
+  color: #CFDBD5;
+}
+
 img {
   opacity: 0.75;
   border-radius: 8px;
@@ -73,6 +77,10 @@ ul {
   border: 1px solid, white;
 }
 
+li:hover{
+  background: #F5CB5C;
+}
+
 .container {
   background: #F5CB5C;
   padding: 15px;
@@ -82,7 +90,7 @@ ul {
   font-family: 'MuseoModerno', cursive;
   border-radius: 8px;
   width: 250px;
-  height: 300px;
+  // height: 300px;
 }
 
 .contentBody {
@@ -97,7 +105,8 @@ ul {
   margin-bottom: 100px;
   padding: 15px;
   border-radius: 8px;
-  width: 20%;
+  // max-width: 200px;
+  flex: 1;
   background-color: #CFDBD5;
   justify-content: space-evenly;
   text-align: center; 
@@ -109,13 +118,15 @@ ul {
 
 .mainContent {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 2;     
   margin-top: 75px;
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 100px;
   padding: 15px;
   border-radius: 8px;
-  flex: 2;     
   overflow: auto;
   background-color: #F5CB5C;
   opacity: .75;
@@ -124,4 +135,8 @@ ul {
 
 .searchContent {
   background-color: #F5CB5C;
+}
+
+.back {
+  background-color: #333533;
 }

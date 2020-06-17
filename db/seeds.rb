@@ -1,7 +1,7 @@
 Album.destroy_all
 User.destroy_all
 
-50.times do |index|
+5.times do |index|
   Album.create!(
     name: Faker::Music.album, 
     artist: Faker::Music::RockBand.name, 
@@ -12,7 +12,7 @@ User.destroy_all
   )
 end
 
-10.times do |index|
+2.times do |index|
   User.create!(
     email: Faker::Internet.email,
     password: 'password',
