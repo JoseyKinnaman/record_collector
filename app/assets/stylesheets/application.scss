@@ -17,6 +17,17 @@ body {
 
 
 img.shelf {
+  opacity: 0.75;
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 .flex-item > a {
   color: #CFDBD5;
 }
@@ -33,12 +44,10 @@ img {
 }
 
 
-img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-
+// img {
+//   width: 100%;
+//   border-radius: 8px;
+// }
 
 
 ul {
@@ -153,4 +162,4 @@ li:hover{
 
 .back {
   background-color: #333533;
-}
+} 

@@ -41,10 +41,11 @@ Access Token URL    https://api.discogs.com/oauth/access_token
 
 ## todo list
 <!-- back end -->
-* _adjust the api call for only vinyl?_
-* _get username into users table (or take out)_
-* _admin_
-* _delete crud_
+* adjust the api call for only vinyl?
+* get username into users table (or take out)
+* admin
+* homepage -> add featured album section & add user authentication for pages
+
 
 ## Stretch Goals
 * _message board_
@@ -56,13 +57,12 @@ Access Token URL    https://api.discogs.com/oauth/access_token
 
 
 <!-- ---------front-end----------- -->
-* CSS for displaying records... tile, grid ? something cool..display users saved albums in mainContent
-* work on search function for searching a collection
-* project title
-* fix login and signin views (add authorizations for what a user can see)
-* add content to homepage
-* _general styling
+* work on search function for searching a collection -> gem "pg_search"
+* scopes for sorting
 
+* project title
+* _general styling
+* _gallery view/tiling for albums
 
 
 ## Technologies Used
