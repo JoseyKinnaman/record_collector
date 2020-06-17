@@ -57,6 +57,7 @@ class AlbumsController < ApplicationController
   def show
     @artist = Album.show(params[:id])
     @albums = Album.all_albums(@artist['id'])
+    # @album = Album.find(params[:id])
   end
 
   def update
@@ -73,6 +74,10 @@ class AlbumsController < ApplicationController
     @album.destroy 
     render :edit
   end
+
+  # def display
+  #   @albums = Album.all
+  # end
 
   private
     def album_params

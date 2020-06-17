@@ -17,6 +17,11 @@ body {
 
 
 img.shelf {
+.flex-item > a {
+  color: #CFDBD5;
+}
+
+img {
   opacity: 0.75;
   border-radius: 8px;
   max-width: 100%;
@@ -67,17 +72,21 @@ ul {
   border: 1px solid, white;
 }
 
-// .container {
-//   background: #F5CB5C;
-//   padding: 15px;
-//   margin: 75px;
-//   color: #333533;
-//   font-weight: bold;
-//   font-family: 'MuseoModerno', cursive;
-//   border-radius: 8px;
-//   width: 250px;
-//   height: 300px;
-// }
+li:hover{
+  background: #F5CB5C;
+}
+
+.container {
+  background: #F5CB5C;
+  padding: 15px;
+  margin: 75px;
+  color: #333533;
+  font-weight: bold;
+  font-family: 'MuseoModerno', cursive;
+  border-radius: 8px;
+  width: 250px;
+  // height: 300px;
+}
 
 .contentBody {
   display: flex;
@@ -93,6 +102,8 @@ ul {
   padding: 15px;
   border-radius: 8px;
   // width: 20%;
+  // max-width: 200px;
+  flex: 1;
   background-color: #CFDBD5;
   justify-content: space-evenly;
   text-align: center; 
@@ -138,4 +149,8 @@ ul {
 
 .searchContent {
   background-color: #F5CB5C;
+}
+
+.back {
+  background-color: #333533;
 }

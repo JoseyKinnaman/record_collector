@@ -10,36 +10,38 @@
 <%# <% end %> %> %>
 
 <%# FROM FRONT END %>
-<div class=contentBody>
-  <aside class="sidebar">
-      <h1> My Collection </h1>
-      <%= link_to "edit collection", edit_collection_path %>
-      <%if current_user %>
-        <p> Welcome <%= current_user.email %></p>
-          <%= image_tag "IMG_5530.jpg", class: "shelf" %>
-      <% else %>
-        <p> Please log-in to see this page!</p>
-      <% end %>
-  </aside>
-
-  <main class="mainContent">
-    <h1>Existing Records</h1>
-    <br>
-      <%if current_user.albums.any?%>
-        <% current_user.albums.each do |album| %>
-            <ul> 
-              <%# <div class="flex_container"> %>
-                <li class="flex-item">
-                <a href="<%=album.link%>" target="_blank"><img src="<%=album.cover_image%>" alt=""></a></li>
-                <h4><%= album.artist %></h4>
-                <p><%= album.name %></p>
-              <%# </div> %>
-            </ul>
+<div class="back">
+  <div class=contentBody>
+    <aside class="sidebar">
+        <h1> My Collection </h1>
+        <%= link_to "edit collection", edit_collection_path %>
+        <%if current_user %>
+          <p> Welcome <%= current_user.email %></p>
+            <%= image_tag "IMG_5530.jpg", class: "shelf" %>
+        <% else %>
+          <p> Please log-in to see this page!</p>
         <% end %>
-      <% else %>
-        <p>There are no albums yet.</p>
-      <% end %>
-  </main>
+    </aside>
+
+    <main class="mainContent">
+      <h1>Existing Records</h1>
+      <br>
+        <%if current_user.albums.any?%>
+          <% current_user.albums.each do |album| %>
+              <ul> 
+                <%# <div class="flex_container"> %>
+                  <li class="flex-item">
+                  <a href="<%=album.link%>" target="_blank"><img src="<%=album.cover_image%>" alt=""></a></li>
+                  <h4><%= album.artist %></h4>
+                  <p><%= album.name %></p>
+                <%# </div> %>
+              </ul>
+          <% end %>
+        <% else %>
+          <p>There are no albums yet.</p>
+        <% end %>
+    </main>
+  </div>
 </div>
 
 <%# 
