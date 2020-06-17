@@ -39,12 +39,9 @@ class AlbumsController < ApplicationController
    cover_image = @album['images'][0]['resource_url']
    link = @album['uri']
    genre = @album['genres'][0]
-    
    @new_album = Album.create!(name: name, discog_id: discog_id, artist: artist, cover_image: cover_image, link: link, genre: genre)
-  
-    ## Need method for adding to join table using double arrow method. 
-
-    if @new_album.save    
+    if @new_album.save 
+      current_user.albums << @new_album   
       redirect_to "/"
     end
   end
