@@ -1,4 +1,5 @@
 class AlbumsController < ApplicationController
+  before_action :authenticate_user!, :except => [:homepage]
   def index
     @albums = Album.all
     current_user
