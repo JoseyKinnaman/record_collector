@@ -56,6 +56,16 @@ Access Token URL    https://api.discogs.com/oauth/access_token
 * _I want to be able to see the total value of my collection and the value of each album I own._
 * _phone capabilities_
 
+## todo list
+* _develop way to add albums to db
+* _reroute user to homepage after signin
+* _get username into users table
+* _ scopes for displaying, records by genre etc
+* _display users saved albums in mainContent
+* _work on search function
+* _project title
+* _fix login and signin views
+
 
 
 ## Technologies Used

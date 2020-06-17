@@ -85,7 +85,7 @@ GEM
     ffi (1.13.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    httparty (0.18.1)
+    httparty (0.18.0)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
     i18n (1.8.3)
@@ -271,7 +271,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 RUBY VERSION
-   ruby 2.6.3p62
+   ruby 2.6.5p114
 
 BUNDLED WITH
    1.17.2

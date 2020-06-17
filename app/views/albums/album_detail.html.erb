@@ -1,0 +1,27 @@
+- Shows all tracks on song for particular album & has button for adding this album to their 'collection'
+
+<div class="searchContent">
+  <% if @tracks.any? %>
+  <ol>
+    <% @tracks.each do |track| %>
+    <li><%= track['title'] %></li>
+    <% end %>
+  </ol>
+  <% else %>
+    There are currently no tracks to display for this album
+  <% end %>
+  <li><a href="/albums/<%=@album['id']%>" data-method="post" value="<%= albums_path %>">Add to collection</a></li>
+</div>
+      
+
+
+
+ <form type="hidden" action="/albums/:id" method="post">
+    <input type="hidden" class="form-control" name=  value="#{album['id']}">
+    <input type="hidden" name="genre" value="#album['genre']">
+    <input type="hidden" name="dicogs_id" value="#album['title]">
+    <input type="hidden" name="" value="#album['title]">
+    <input type="hidden" name="" value="#album['title]">
+  </form>
+ <button type="submit" name="submit" class="btn btn-primary">Add Photo</button>
+         
