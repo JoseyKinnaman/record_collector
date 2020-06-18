@@ -6,7 +6,7 @@
 #### Josey Kinnaman, Chee Murakami, Zinfira Safargalieva, Allison Mackey, Ryan Duff 
 
 ## Description
-This project is 
+A digital record collection catalog that helps a user keep track of records in their collection and organize it by specific parameters. 
 
 ## Setup/Installation Requirements
 Users will need to install Ruby, Rails, psql and Postgres.
