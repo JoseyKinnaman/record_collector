@@ -212,6 +212,7 @@ ul {
 }
 
 .panel {
+  margin-left: 5px;
   padding: 30px;
   background-color:#CFDBD5;
   border-radius: 8px;
@@ -221,7 +222,8 @@ ul {
 
 .panel2 {
   text-align: center;
-  margin-left: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
   padding: 30px;
   background-color: #F5CB5C;
   border-radius: 8px;
@@ -230,7 +232,8 @@ ul {
 }
 
 .homepage {
-  margin-top: 75px;
+  margin-top: 50px;
+  padding: 10px;
 }
   
 footer {
