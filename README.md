@@ -43,30 +43,6 @@ Now open a web browser and enter localhost:3000 in the address bar to view the p
 * _phone capabilities_
 * _user name in Devise and displayed in 'My collection'.
 
-
-## TO DO LIST
-  SEARCH.html.erb
-
-  - adjust the api call for only vinyl (RYAN & ALLISON)
-
-
-
-  - nav bar, moving signed in & sign-out to the right hand side (CHEE & ZINFIRA)
-  - nav bar, right side doesn't have an end? (CHEE & ZINFIRA)
-  - add sort by options on search page? (CHEE & ZINFIRA)
-
-
-  - work on search function for searching a collection -> gem "pg_search" 
-
-@ 1:00 pm --> START WORKING ON DEMO PAGE
-
-## TO DO BEFORE DEMO @ 3:00pm
-- create account for showcasing our project with visually appealing records displayed on 'my collection' page.   
-- deploy to Heroku 
-- create outline script for demo
-
-
-
 ## Technologies Used
 * _Ruby_
 * _Rails_
