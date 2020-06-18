@@ -1,3 +1,6 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 body {
   background-color: #242423;
   background-image: url('records.jpg');
@@ -13,64 +16,32 @@ body {
 // eerie black #242423
 // Jet #333533
 
-.flex-container {
-  width: 250px;
-  height: 250px;
-}
 
-.flex-item {
-  background: #333533;
-  padding: 0px;
-  width: 250px;
-  height: 250px;
-  color: #CFDBD5;
-  font-weight: bold;
-  font-size: 2em;
-  text-align: center;
-  border-radius: 8px;
-}
 
+// -------- image classes ----------------
+
+img {
+  border-radius: 8px;;
+}
 img.shelf {
-  opacity: 0.75;
-  border-radius: 8px;
+  opacity: 0.9;
   max-width: 100%;
   height: auto;
   display: block;
   margin-top: auto;
   margin-left: auto;
   margin-right: auto;
-} 
-
-img.cover {
-  border-radius: 8px;
-  max-width: 100%;
-}
-
-img.shelf {
-  opacity: 0.75;
-  border-radius: 8px;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-.flex-item > a {
-  color: #CFDBD5;
+  margin-bottom: auto;
 }
 
 img.cover {
-  border-radius: 8px;
-  max-width: 100%;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
 }
 
-ul {
-  list-style: none;
-}
 
+// ----------Navbar classes ------------------
 .navigation {
   background: #CFDBD5;
   color: #333533;
@@ -85,7 +56,6 @@ ul {
   font-family: 'MuseoModerno', cursive;
   border-radius: 8px;
   margin-bottom: 30px;
-  
 }
 
 .navButton {
@@ -105,6 +75,8 @@ li:hover{
   background: #F5CB5C;
 }
 
+
+// --------classes for sign in and sign up forms-------------
 .deviseContainer {
   background: #F5CB5C;
   padding: 15px;
@@ -114,23 +86,27 @@ li:hover{
   font-family: 'MuseoModerno', cursive;
   border-radius: 8px;
   width: 250px;
+  opacity: .90;
 }
 
+
+
+
+// ----------------index.html.erb classes --------------------
 .contentBody {
   display: flex;
   color: #333533 ;
+  margin-top: 75px;
 }
 
 .sidebar {
   flex: 1;
-  margin-top: 150px;
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 100px;
   padding: 15px;
   border-radius: 8px;
-  max-width: 200px;
-  flex: 1;
+  max-width: 300px;
   background-color: #CFDBD5;
   justify-content: space-evenly;
   text-align: center; 
@@ -138,14 +114,13 @@ li:hover{
 }
 
 .sidebar > h1 {
-text-align: center; 
-}
+  text-align: center; 
+  }
 
 .mainContent {
   display: flex;
   flex: 3;
   flex-flow: row wrap;
-  margin-top: 75px;
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 50px;
@@ -157,18 +132,20 @@ text-align: center;
   text-align: center; 
 }
 
-// .flex-container {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: space-around;
-// }
+ul {
+  list-style: none;
+}
+
+.flex-container {
+  width: 250px;
+  height: 250px;
+}
 
 .flex-item {
-  background: #333533;
+  // background: #333533;
   padding: 0px;
   width: 250px;
   height: 250px;
-  margin: 10px;
   color: #CFDBD5;
   font-weight: bold;
   font-size: 2em;
@@ -176,16 +153,57 @@ text-align: center;
   border-radius: 8px;
 }
 
+//  p .flex-item  {
+//   max-width: 250px;
+//   word-wrap: break-word;
+//   overflow-wrap: break-word;
+//   font-size: 2em;
+// }
+
+// -----------discogs search classes-------------------
 .searchContent {
+  display: flex;
+  flex: 3;
+  flex-flow: row wrap;
+  margin-top: 35px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 50px;
+  padding: 15px;
+  border-radius: 8px;
+  overflow: auto;
   background-color: #F5CB5C;
+  opacity: .90;
+  text-align: center; 
 }
 
-// .back {
-//   background-color: #333533;
-// } 
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 75px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 25px;
+  padding: 15px;
+  border-radius: 8px;    
+  overflow: auto;
+  background-color: #F5CB5C;
+  opacity: .90;
+}
+
+.search {
+  margin-top: 50px;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 55px;
+  background-color:#333533;
+  padding: 15px;
+  border-radius: 8px;  
+  opacity: .80;
+}
 
 
-
+// --------------Homepage classes ----------------------
 .main_logo {
   width: 50%;
   border-radius: 100px;
@@ -195,7 +213,8 @@ text-align: center;
   padding: 30px;
   background-color:#CFDBD5;
   border-radius: 8px;
-  opacity: .75;
+  opacity: .85;
+  text-align: center;
 }
 
 .panel2 {
@@ -217,20 +236,4 @@ footer {
   color: #CFDBD5;
 }
 
-img {
-  border-radius: 8px;
-}
 
-.header {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 75px;
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-bottom: 25px;
-  padding: 15px;
-  border-radius: 8px;    
-  overflow: auto;
-  background-color: #F5CB5C;
-  opacity: .90;
-}

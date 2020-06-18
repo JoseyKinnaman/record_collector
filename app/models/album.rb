@@ -35,9 +35,23 @@ class Album < ApplicationRecord
 
   # API CALLS
   def self.search(type, search_term)
-    results = HTTParty.get("https://api.discogs.com/database/search?type=#{type}&q=#{search_term}&key=" + ENV["API_KEY"] + "&secret=" + ENV["API_SECRET"])
-    # binding.pry
-    final_results = results["results"]
+    if type == "artist"
+      results = HTTParty.get("https://api.discogs.com/database/search?type=#{type}&q=#{search_term}&key=" + ENV["API_KEY"] + "&secret=" + ENV["API_SECRET"] + "&has_image=yes")  
+      final_results = results["results"]
+
+    elsif type == "title"
+      results = HTTParty.get("https://api.discogs.com/database/search?title=#{search_term}&key=" + ENV["API_KEY"] + "&secret=" + ENV["API_SECRET"]+ "&has_image=yes")  
+      final_results = results["results"]
+
+    elsif type == "genre"
+      results = HTTParty.get("https://api.discogs.com/database/search?genre=#{search_term}&key=" + ENV["API_KEY"] + "&secret=" + ENV["API_SECRET"]+ "&has_image=yes")  
+      final_results = results["results"]
+    elsif type == "year"
+      results = HTTParty.get("https://api.discogs.com/database/search?year=#{search_term}&key=" + ENV["API_KEY"] + "&secret=" + ENV["API_SECRET"]+ "&has_image=yes")  
+      final_results = results["results"]
+    end
+  
+    
   end
   
   def self.show(artist_id)

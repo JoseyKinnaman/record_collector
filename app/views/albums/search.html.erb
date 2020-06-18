@@ -1,34 +1,42 @@
-<div class="back">
+
   <div class= "header">
-    <form>
+    <%= image_tag "logo.png", class: "cover"%>
+    
+    <div>
+    <form class="search">
       <input type="text" class="form-control" name ="search_term" id="search" placeholder="enter search term">
-      <label for="select search type">Select Search Type</label>
-      <select class="form-control" id="search_type">
-        <option name="">Select An Option</option>
-        <option name="artist">Artist</option>
-        <option name="title">Album</option>
-        <option name="genre">Genre</option>
-        <option name="year">Year</option>
+      <br>
+      <select class="form-control" name ="type" id="type" required>
+        <option type="text" value = "" name="type[nil]">select a search option</option>
+        <option type="text" value = "artist" name= "type[artist]">artist</option>
+        <option type="text" value = "title" name="type[title]">album</option>
+        <option type="text" value = "genre" name="type[genre]">genre</option>
+        <option type="text" value = "year" name="type[year]">year</option>
       </select>
-      <button type= "submit" class= "btn btn-dark">Search</button>
+      <br>
+      <button type= "submit" class= "btn btn-default">Search</button>
     <form>
+    </div>
   </div>
-  <% if @search_results.any? %>
-    <main class="header">
-      <h1>Search Results: </h1>
-    </main>
-    <main class="mainContent">
-      <ul> 
-        <% @search_results.each do |result| %>
-            <div class="flex_container">
-              <li class="flex-item">
-                <a href="/albums/<%= result['id'] %>"> <img class= "cover" src="<%=result['cover_image']%>" alt="<%= result['id'] %>"></a>
-              </li>
-            </div>
-        <% end %>
-      </ul>
-    </main>
-  <% end %>
-</div>
+  <main class="mainContent">  
+    <% if @search_results.any? %>
+      <% @search_results.each do |result| %>
+        <ul> 
+          <div class="flex_container">
+            <li class="flex-item">
+              <%if result['cover_image'] == nil || result['cover_image'].include?(".gif")%>
+                <%result['cover_image'] = "https://www.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png" %>
+               <a href="/albums/<%= result['id']%>"> <img class= "cover" src="<%=result['cover_image']%>" alt="<%= result['id'] %>"></a>
+              <% else  %>
+                 <a href="/albums/<%= result['id'] %>"> <img class= "cover" src="<%=result['cover_image']%>" alt="<%= result['id'] %>"></a>
+              <% end %>
+            </li>
+            <p class="flex-item"><%=result['title'] %></p>
+          </div>
+        </ul>
+      <% end %>
+    <% end %>
+  </main>
+
 
 

@@ -35,6 +35,7 @@ class AlbumsController < ApplicationController
   def search
     @search_term = params[:search_term]
     @type = params[:type]
+    # binding.pry
     if @search_term == nil || @type == ''
       "Please fill out the forms to search for something!"
       @search_results = []
@@ -46,7 +47,12 @@ class AlbumsController < ApplicationController
   def tracks
     @album = Album.find_album(params[:id])
     @tracks= Album.album_songs(params[:id])
-    render :album_detail
+    if @tracks == nil
+      redirect_to search_path
+    else 
+      @tracks
+      render :album_detail
+    end
   end
   
   def new
@@ -81,7 +87,12 @@ class AlbumsController < ApplicationController
   def show
     @artist = Album.show(params[:id])
     @albums = Album.all_albums(@artist['id'])
-    # @album = Album.find(params[:id])
+    if @albums == nil
+      redirect_to search_path
+    else 
+      @albums
+      render :show
+    end
   end
 
   def update
@@ -98,9 +109,6 @@ class AlbumsController < ApplicationController
     @album.destroy 
     render :edit
   end
-
-  
-
 
   private
     def album_params
