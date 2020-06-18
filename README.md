@@ -44,7 +44,6 @@ Access Token URL    https://api.discogs.com/oauth/access_token
 * adjust the api call for only vinyl?
 * get username into users table (or take out)
 * admin
-* homepage -> add featured album section & add user authentication for pages
 
 
 ## Stretch Goals
