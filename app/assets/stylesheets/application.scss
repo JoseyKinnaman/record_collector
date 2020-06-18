@@ -75,17 +75,17 @@ ul {
   background: #CFDBD5;
   color: #333533;
   display: inline-flex;
-  // flex-flow: row wrap;
+  flex-wrap: wrap;
+  //flex-flow: row wrap;
   justify-content: flex-start;
   position: fixed;
   top: 0;
   left: 1;
-  width: 100%;
+  width: 96%;
   border: 1px solid, white;
   font-family: 'MuseoModerno', cursive;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-bottom: 30px;
-  
 }
 
 .navButton {
@@ -233,4 +233,12 @@ img {
   overflow: auto;
   background-color: #F5CB5C;
   opacity: .90;
+}
+
+.right-side {
+  flex: 1;
+}
+
+.onRight {
+  float: right;
 }

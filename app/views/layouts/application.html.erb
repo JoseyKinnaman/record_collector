@@ -11,23 +11,25 @@
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100&display=swap" rel="stylesheet">
   </head>
   <body>
-    <ul class="navigation">
-    <li><a class="navButton" href="/homepage">Home</a></li>
-    <br>
-    <li><a class="navButton" href="/albums" >My Collection</a></li>
-    <br>
-    <li><a class="navButton" href="/search" >Search Discogs</a></li>
-    <% if current_user %>
-    <a class="navButton signed_in_user" href="#">Signed in as <%= current_user.email %></a>
-      <li><a class="navButton signed_in_user" href="/users/sign_out" data-method="delete" value="<%= destroy_user_session_path%>">Sign-out</a></li>
-    <% else  %>
-      <li><a class="navButton" href="/users/sign_up">Sign-up</a></li>
-       <br>
-      <li><a class="navButton" href="/users/sign_in">Login</a></li>
-      <br>
-    <% end %>
-    <br>
-    </ul>
+
+      <ul class="navigation">
+        <li><a class="navButton" href="/homepage">Home</a></li>
+          <br>
+        <li><a class="navButton" href="/albums" >My Collection</a></li>
+          <br>
+        <li><a class="navButton" href="/search" >Search Discogs</a></li>
+        
+        <div class="right-side">
+          <% if current_user %>
+            <li><a class="navButton onRight" href="/users/sign_out" data-method="delete" value="<%= destroy_user_session_path%>">Sign-out</a></li>
+            <li class="navButton onRight" href="#">Signed in as <%= current_user.email %></li>
+          <% else  %>
+            <li><a class="navButton onRight" href="/users/sign_up">Sign-up</a></li>
+            <li><a class="navButton onRight" href="/users/sign_in">Login</a></li>
+          <% end %>
+        </div>
+       
+      </ul>
    <%= flash[:notice] %>
     <%= yield %>
     <footer> ReCollector, 2020 ©</footer>
