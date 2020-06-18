@@ -25,15 +25,16 @@
       <div class="genres">
         <% @genre_names.each do |genre| %>
          
-         <%= link_to genre, albums_path(:genre => genre) %>
+         <p><%= link_to genre, albums_path(:genre => genre) %></p>
       
           
         <% end %> 
         <br>
         <%= flash[:notice] %>
+        <%= flash[:alert] %>
       </div>
       <br>
-      <%= link_to "edit collection", edit_collection_path %>
+      <%= link_to "Edit collection", edit_collection_path %>
   </aside>
 
   <%# DISPLAY OF 'MY COLLECTION' %>

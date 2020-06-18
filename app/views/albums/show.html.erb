@@ -5,22 +5,21 @@ when they press the button it 'create!' method for Album & grabs all params need
 <br><br>
 <div class="searchContent">
 
-<h3>Albums By: <%= @artist['name']%></h3>
-<br>
+  <h3>Albums By: </h3> 
+  <br>
+  <h3> <%= @artist['name']%></h3>
+  <br>
   <ul>
-  
     <% if @albums.any? %>
       <%@albums.each do |album|%>
-        <li>album title: <a href="/tracks/<%=album['id']%>"> <%= album['title'] %> </a>
-        album year: <%= album['year'] %> 
-        album id: <%= album['id'] %>
-        </li>
+        <ul>
+            <li>Album title: <a href="/tracks/<%=album['id']%>"> <%= album['title'] %> </a></li>
+            <li>Album year: <%= album['year'] %> </li>
+            <li>Album id: <%= album['id'] %></li>
+        </ul>
       <% end %>
     <% else %>
-      "This artist doesn't currently have any albums"
+     <p> "This artist doesn't currently have any albums"</p>
     <% end %>
   </ul>
 </div>
-
-
- 

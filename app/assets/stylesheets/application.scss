@@ -23,6 +23,7 @@ body {
 img {
   border-radius: 8px;;
 }
+
 img.shelf {
   opacity: 0.9;
   max-width: 100%;
@@ -52,10 +53,12 @@ img.cover {
   position: fixed;
   top: 0;
   left: 1;
-  width: 100%;
+  width: 99.7%;
   border: 1px solid, white;
   font-family: 'MuseoModerno', cursive;
-  border-radius: 10px;
+  border-radius: 8px;
+  // margin-left: 20px;
+  // margin-right: 20px;
   margin-bottom: 30px;
 }
 
@@ -77,6 +80,7 @@ li:hover{
 }
 
 
+
 // --------classes for sign in and sign up forms-------------
 .deviseContainer {
   background: #F5CB5C;
@@ -89,9 +93,6 @@ li:hover{
   width: 250px;
   opacity: .90;
 }
-
-
-
 
 // ----------------index.html.erb classes --------------------
 .contentBody {
@@ -163,16 +164,26 @@ ul {
 }
 
 
+
+
 // -----------discogs search classes-------------------
 .searchContent {
   display: flex;
   flex: 3;
   flex-flow: row wrap;
-  margin-top: 35px;
+  margin-top: 15px;
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 50px;
   padding: 15px;
+  border-radius: 8px;
+  overflow: auto;
+  background-color: #F5CB5C;
+  opacity: .90;
+  text-align: center; 
+}
+
+.searchContentList {
   border-radius: 8px;
   overflow: auto;
   background-color: #F5CB5C;
@@ -203,6 +214,22 @@ ul {
   padding: 15px;
   border-radius: 8px;  
   opacity: .95;
+}
+
+.spacing {
+  // display: flex;
+  // flex: 3;
+  // flex-flow: row wrap;
+  margin-top: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 50px;
+  padding: 15px;
+  border-radius: 8px;
+  // overflow: auto;
+  opacity: .90;
+  text-align: center; 
+
 }
 
 
@@ -251,4 +278,6 @@ footer {
 
 .onRight {
   float: right;
+  margin-right: 30px;
+  margin-left: -25px;
 }

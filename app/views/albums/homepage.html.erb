@@ -4,6 +4,7 @@
     <div class="panel" style="flex: 1;">
       <%= image_tag "logo.png", class: "main_logo" %>
       <h3> Welcome to ReCollector. <br> The premiere record collecting digital catalog for keeping track of and sorting your collection.</h3>
+
     </div>
 
     <!-- Right content -->
@@ -13,7 +14,6 @@
         <ul>
           <li><img src="<%= @photo %>"></li>
           <li><%= @artist_profile %> </li>
-          <br>
           <li>Find out more about <a href='<%= @artist_link %>'> <%= @artist_name %></a> & see all of her <a href = "<%= @artist_albums %>"> albums</a></li>
         </ul>
     </div>

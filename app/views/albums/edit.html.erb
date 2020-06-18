@@ -18,7 +18,7 @@
             <a href="<%=album.link%>" target="_blank"><img class="flex-item" class="cover" src="<%=album.cover_image%>" alt=""></a></li>
             <h4><%= album.artist %></h4>
             <p><%= album.name %></p>
-            <%= button_to "delete album", album_path(album.id), method: :delete  %>
+            <%= button_to "Delete album", album_path(album.id), method: :delete  %>
           </div>
         </ul>
       <% end %>
