@@ -46,16 +46,22 @@ Now open a web browser and enter localhost:3000 in the address bar to view the p
 
 ## TO DO LIST
   SEARCH.html.erb
-  - MERGE
-  - adjust the api call for only vinyl 
-  - empty 'photo' boxes are showing up, with no albums? 
+  - MERGE √
+  - adjust the api call for only vinyl (RYAN & ALLISON)
+  - empty 'photo' boxes are showing up, with no albums? (RYAN & ALLISON)
   - images need to be situated properly (unformatted, copy from front_end formatting?)
-  - remove username from schema 
-  - need sort by options?
-  - work on search function for searching a collection -> gem "pg_search"
-  - need sort by options?
+  - my collection page formatting (RYAN, ALLISON & JOZY)
+  - remove username from schema (JOZY)
+  - add bootstrap for buttons (JOZY)
 
-@ 1:00 pm --> START WORKING ON DEMO 
+  - nav bar, moving signed in & sign-out to the right hand side (CHEE & ZINFIRA)
+  - nav bar, right side doesn't have an end? (CHEE & ZINFIRA)
+  - add sort by options on search page? (CHEE & ZINFIRA)
+
+
+  - work on search function for searching a collection -> gem "pg_search" 
+
+@ 1:00 pm --> START WORKING ON DEMO PAGE
 
 ## TO DO BEFORE DEMO @ 3:00pm
 - create account for showcasing our project with visually appealing records displayed on 'my collection' page.   
