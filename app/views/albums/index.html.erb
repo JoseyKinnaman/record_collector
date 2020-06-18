@@ -26,8 +26,11 @@
         <% @genre_names.each do |genre| %>
          
          <%= link_to genre, albums_path(:genre => genre) %>
+      
           
         <% end %> 
+        <br>
+        <%= flash[:notice] %>
       </div>
       <br>
       <%= link_to "edit collection", edit_collection_path %>

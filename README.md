@@ -48,8 +48,7 @@ Now open a web browser and enter localhost:3000 in the address bar to view the p
   SEARCH.html.erb
 
   - adjust the api call for only vinyl (RYAN & ALLISON)
-  - images need to be situated properly (unformatted, copy from front_end formatting?)
-  - my collection page formatting (RYAN, ALLISON & JOZY)
+
 
 
   - nav bar, moving signed in & sign-out to the right hand side (CHEE & ZINFIRA)

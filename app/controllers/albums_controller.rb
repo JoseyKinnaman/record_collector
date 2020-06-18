@@ -72,7 +72,10 @@ class AlbumsController < ApplicationController
    @new_album = Album.create!(name: name, discog_id: discog_id, artist: artist, cover_image: cover_image, link: link, genre: genre)
     if @new_album.save 
       current_user.albums << @new_album   
+      flash[:notice] = "Album successfully added!"
       redirect_to "/albums"
+      else
+    render :search
     end
   end
 

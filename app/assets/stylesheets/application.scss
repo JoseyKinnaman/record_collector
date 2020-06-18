@@ -141,6 +141,14 @@ ul {
   height: 250px;
 }
 
+.flex-container, p {
+ max-width: 250px;
+ word-wrap: break-word;
+ overflow-wrap: break-word;
+ font-size: 1em;
+ color: #333533;
+}
+
 .flex-item {
   // background: #333533;
   padding: 0px;
@@ -153,12 +161,6 @@ ul {
   border-radius: 8px;
 }
 
-//  p .flex-item  {
-//   max-width: 250px;
-//   word-wrap: break-word;
-//   overflow-wrap: break-word;
-//   font-size: 2em;
-// }
 
 // -----------discogs search classes-------------------
 .searchContent {
@@ -199,7 +201,7 @@ ul {
   background-color:#333533;
   padding: 15px;
   border-radius: 8px;  
-  opacity: .80;
+  opacity: .95;
 }
 
 
