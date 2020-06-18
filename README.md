@@ -57,7 +57,6 @@ Access Token URL    https://api.discogs.com/oauth/access_token
 
 ## ISSUES
 SEARCH.html.erb
-  - when you scroll the nav bar goes behind the 'mainContent' div class (should probably be in front?)
   - empty 'photo' boxes are showing up, with no albums? 
   - spacing issues 
   - need sort by options?
