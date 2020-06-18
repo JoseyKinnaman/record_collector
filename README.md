@@ -29,44 +29,39 @@ Now open a web browser and enter localhost:3000 in the address bar to view the p
 ## User Stories Employed to Determine Behavior Driven Development Strategy
 
 * As an user I want to be able to store a list of all of the vinyl records in my collection.
-* As a user I want to be able to search for an album by name or artist, then select an album from a list and add it to my collection.
-* I want to be able to add, delete, update records and the information that is stored with them.
-* I want to be able to see my collection organized in different ways, such as by genre, alphabetical, release date, album name, artist name etc.
-* I want to be able to search my collection
+* As a user I want to be able to search for an album by name, artist, genre, year and then select an album from a list and add it to my collection.
+* I want to be able to add and delete records and the information that is stored with them.
+* I want to be able to see my collection organized in different ways, such as by genre, album name, artist name and recently added. 
 * I want to be able to display a virtual record shelf showing pictures of my albums. 
 
-Request Token URL    https://api.discogs.com/oauth/request_token
-Authorize URL    https://www.discogs.com/oauth/authorize
-Access Token URL    https://api.discogs.com/oauth/access_token
-
-## todo list
-<!-- back end -->
-* adjust the api call for only vinyl?
-* get username into users table (or take out)
-* admin
-
-
 ## Stretch Goals
+* _I want to be able to search my collection_
 * _message board_
 * _log in through discogs_
 * _user want list_
 * _I want to be able to see the total value of my collection and the value of each album I own._
 * _phone capabilities_
+* _user name in Devise and displayed in 'My collection'.
 
 
-## ISSUES
-SEARCH.html.erb
+## TO DO LIST
+  SEARCH.html.erb
+  - MERGE
+  - adjust the api call for only vinyl 
   - empty 'photo' boxes are showing up, with no albums? 
-  - spacing issues 
-  - need sort by options?
   - images need to be situated properly (unformatted, copy from front_end formatting?)
-<!-- ---------front-end----------- -->
-* work on search function for searching a collection -> gem "pg_search"
-* scopes for sorting
+  - remove username from schema 
+  - need sort by options?
+  - work on search function for searching a collection -> gem "pg_search"
+  - need sort by options?
 
-* project title
-* _general styling
-* _gallery view/tiling for albums
+@ 1:00 pm --> START WORKING ON DEMO 
+
+## TO DO BEFORE DEMO @ 3:00pm
+- create account for showcasing our project with visually appealing records displayed on 'my collection' page.   
+- deploy to Heroku 
+- create outline script for demo
+
 
 
 ## Technologies Used
