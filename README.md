@@ -35,13 +35,13 @@ Now open a web browser and enter localhost:3000 in the address bar to view the p
 * I want to be able to display a virtual record shelf showing pictures of my albums. 
 
 ## Stretch Goals
-* _I want to be able to search my collection_
-* _message board_
-* _log in through discogs_
-* _user want list_
-* _I want to be able to see the total value of my collection and the value of each album I own._
-* _phone capabilities_
-* _user name in Devise and displayed in 'My collection'.
+* _To be able to search my collection_
+* _Allow a user message board_
+* _Log in through Discogs website_
+* _Be able to add records to my 'want list'_
+* _Be able to see the total value of my collection and the value of each album I own._
+* _Media queries for cell phone capabilities_
+* _Accounting for a User name in Devise and displayed in 'My collection'._
 
 ## Technologies Used
 * _Ruby_
