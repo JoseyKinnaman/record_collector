@@ -13,16 +13,20 @@
     <ul class="navigation">
     <li><a class="navButton" href="/homepage">Home</a></li>
     <br>
-    <li><a class="navButton" href="/users/sign_up">Sign-up</a></li>
-    <br>
-    <li><a class="navButton" href="/users/sign_in">Login</a></li>
-    <br>
-    <li><a class="navButton" href="/users/sign_out" data-method="delete" value="<%= destroy_user_session_path%>">Sign-out</a></li>
-    <br>
     <li><a class="navButton" href="/albums" >My Collection</a></li>
     <br>
     <li><a class="navButton" href="/search" >Search Discogs</a></li>
-  </ul>
+    <% if current_user %>
+    <a class="navButton signed_in_user" href="#">Signed in as <%= current_user.email %></a>
+      <li><a class="navButton signed_in_user" href="/users/sign_out" data-method="delete" value="<%= destroy_user_session_path%>">Sign-out</a></li>
+    <% else  %>
+      <li><a class="navButton" href="/users/sign_up">Sign-up</a></li>
+       <br>
+      <li><a class="navButton" href="/users/sign_in">Login</a></li>
+      <br>
+    <% end %>
+    <br>
+    </ul>
    <%= flash[:notice] %>
     <%= yield %>
   </body>
