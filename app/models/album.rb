@@ -39,6 +39,21 @@ class Album < ApplicationRecord
     end
   end
 
+  def self.featured_artist(artist_id)
+    results = HTTParty.get("https://api.discogs.com/artists/#{artist_id}")
+  end
+
+  def self.featured_image(artist, album)
+    results = HTTParty.get("http://ws.audioscrobbler.com/2.0/?method=album.getinfo&artist=#{artist}&album=#{album}&api_key=" + ENV["LASTFM_KEY"]+ "&format=json")
+    # binding.pry
+    if results["album"]["image"][3]["#text"] == ""  
+      results = "https://www.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png"
+    else 
+      results["album"]["image"][3]["#text"]
+    end
+  end
+
+
   # # final_result = {name: , artist: results.artist, }
   #   # two types for API calls will be artist, release title & genre?
   # results.any?

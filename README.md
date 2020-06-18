@@ -55,7 +55,13 @@ Access Token URL    https://api.discogs.com/oauth/access_token
 * _phone capabilities_
 
 
-
+## ISSUES
+SEARCH.html.erb
+  - when you scroll the nav bar goes behind the 'mainContent' div class (should probably be in front?)
+  - empty 'photo' boxes are showing up, with no albums? 
+  - spacing issues 
+  - need sort by options?
+  - images need to be situated properly (unformatted, copy from front_end formatting?)
 <!-- ---------front-end----------- -->
 * work on search function for searching a collection -> gem "pg_search"
 * scopes for sorting

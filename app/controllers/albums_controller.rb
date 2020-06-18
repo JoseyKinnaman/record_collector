@@ -6,7 +6,13 @@ class AlbumsController < ApplicationController
   end
 
   def homepage
-    render :homepage
+    artist = [587458, "Solange", "When I Get Home", 160408]
+    @featured_artist = Album.featured_artist(artist[0])
+    @photo = Album.featured_image(artist[1], artist[2])
+    @artist_albums = "http://localhost:3000/albums/#{artist[3]}"
+    @artist_name = @featured_artist['name']
+    @artist_profile = "American singer, songwriter and model, born 24 June 1986 in Houston, Texas, USA. Daughter of Mathew Knowles and Tina Knowles, sister of Beyoncé. She is married to Ferguson."
+    @artist_link = @featured_artist['uri'] 
   end
 
   def search
