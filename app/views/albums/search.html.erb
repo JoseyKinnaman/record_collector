@@ -18,18 +18,17 @@
       <h1>Search Results: </h1>
     </main>
     <main class="mainContent">
-      <% @search_results.each do |result| %>
-        <ul> 
-          <div class="flex_container">
-            <li class="flex-item">
-              <a href="/albums/<%= result['id'] %>"> <img class= "cover" src="<%=result['cover_image']%>" alt=""></a>
-            </li>
-          </div>
-        </ul>
-      <% end %>
+      <ul> 
+        <% @search_results.each do |result| %>
+            <div class="flex_container">
+              <li class="flex-item">
+                <a href="/albums/<%= result['id'] %>"> <img class= "cover" src="<%=result['cover_image']%>" alt="<%= result['id'] %>"></a>
+              </li>
+            </div>
+        <% end %>
+      </ul>
     </main>
   <% end %>
-   
 </div>
 
 

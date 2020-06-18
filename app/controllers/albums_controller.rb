@@ -1,8 +1,25 @@
 class AlbumsController < ApplicationController
   before_action :authenticate_user!, :except => [:homepage]
   def index
-    @albums = Album.all
-    current_user
+    @albums =  current_user.albums
+
+    if params[:sort]
+      case params[:sort]
+      when 'recently_added'
+        @albums = @albums.recently_added
+      when 'by_album_name'
+        @albums =  @albums.by_album_name
+      when 'by_artist_name'
+        @albums = @albums.by_artist_name
+      end
+    end
+
+    if params[:genre]
+      @albums = @albums.where(genre: params[:genre])
+    end
+    #for view
+    @genre_names = current_user.albums.pluck(:genre).uniq
+    
   end
 
   def homepage
@@ -82,9 +99,8 @@ class AlbumsController < ApplicationController
     render :edit
   end
 
-  # def display
-  #   @albums = Album.all
-  # end
+  
+
 
   private
     def album_params

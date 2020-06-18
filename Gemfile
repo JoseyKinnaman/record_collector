@@ -41,6 +41,7 @@ gem 'sassc-rails', '>= 2.1.0'
 gem 'devise' 
 gem 'httparty' 
 gem 'faker'
+gem 'pg_search'
 
 
 group :development, :test do

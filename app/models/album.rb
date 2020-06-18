@@ -1,6 +1,37 @@
 class Album < ApplicationRecord
   has_and_belongs_to_many(:users)
 
+  
+  # include PgSearch
+  # scope :sorted, ->{ order(name: :asc) }
+  # pg_search_scope :search, against: [:name, :artist, :genre], 
+  # using: {
+  #   tsearch: {
+  #     prefix: true,
+  #     normalization: 2
+  #   }
+  # }
+  #  ------ also for use with pg_search ---------
+  # def self.perform_search(keyword)
+  #   if keyword.present?
+  #     Album.search(keyword)
+  #   else
+  #     Album.all
+  #   end.sorted
+  # end
+    
+  scope :recently_added, -> do
+    order("created_at DESC")
+  end
+
+  # scope :recently_added, -> { where ("created_at >=?", Time.now)}
+  scope :by_album_name, -> do 
+    order("name ASC")
+  end
+
+  scope :by_artist_name, -> do
+    order("artist ASC")
+  end
 
   # API CALLS
   def self.search(type, search_term)
