@@ -19,6 +19,17 @@
             <option value="<%= albums_path %>?sort=by_artist_name" name="artist">Sort by artist name</option>
           </select>
         </div>
+
+        <div class="genres">
+            <% @genre_names.each do |genre| %>
+              <ul>
+                <li>
+                  <%= link_to genre, albums_path(:genre => genre) %>
+                </li>
+              </ul>
+            <% end %> 
+        </div>
+        <a href="<%= albums_path %>">Back to albums</a>
       
         <% else %>
           <p> Please log-in to see this page!</p>

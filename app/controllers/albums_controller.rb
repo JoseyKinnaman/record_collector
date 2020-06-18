@@ -1,21 +1,23 @@
 class AlbumsController < ApplicationController
   def index
-    # if params[:query].present?
-    #   @albums = Album.search_my_collection(params[:query])
-    # else
-    if sort = params[:sort]
+    @albums =  current_user.albums
+
+    if params[:sort]
       case params[:sort]
       when 'recently_added'
-        @albums = current_user.albums.recently_added
+        @albums = @albums.recently_added
       when 'by_album_name'
-        @albums =  current_user.albums.by_album_name
+        @albums =  @albums.by_album_name
       when 'by_artist_name'
-        @albums = current_user.albums.by_artist_name
+        @albums = @albums.by_artist_name
       end
-    
-    else
-      @albums =  current_user.albums
     end
+
+    if params[:genre]
+      @albums = @albums.where(genre: params[:genre])
+    end
+    #for view
+    @genre_names = current_user.albums.pluck(:genre).uniq
     
   end
 
