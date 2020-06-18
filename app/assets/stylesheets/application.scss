@@ -46,7 +46,8 @@ img.cover {
   background: #CFDBD5;
   color: #333533;
   display: inline-flex;
-  // flex-flow: row wrap;
+  flex-wrap: wrap;
+  //flex-flow: row wrap;
   justify-content: flex-start;
   position: fixed;
   top: 0;
@@ -54,7 +55,7 @@ img.cover {
   width: 100%;
   border: 1px solid, white;
   font-family: 'MuseoModerno', cursive;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-bottom: 30px;
 }
 
@@ -242,3 +243,12 @@ footer {
 }
 
 
+// FROM FRONT END BRANCH
+
+.right-side {
+  flex: 1;
+}
+
+.onRight {
+  float: right;
+}
