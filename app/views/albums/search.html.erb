@@ -2,15 +2,15 @@
   <div class= "mainContent">
     <div class="search-bar">
       <form>
-        <input type="text" class="form-control" name ="search_term" id="search" placeholder="enter search term">
-        <label for="select search type">Select Search Type</label>
+        <input type="text" class="form-control" name ="search_term" id="search" placeholder="Enter artist name here">
+        <%# <label for="select search type">Select Search Type</label>
         <select class="form-control" id="search_type">
           <option name="">Select An Option</option>
           <option name="artist">Artist</option>
           <option name="title">Album</option>
           <option name="genre">Genre</option>
           <option name="year">Year</option>
-        </select>
+        </select> %>
         <button type= "submit" class= "btn btn-dark">Search</button>
       <form>
     </div>
@@ -20,7 +20,7 @@
     <% if @search_results.any? %>
       <% @search_results.each do |result| %>
         <%= link_to "#{result['title']}", album_path("#{result['id']}") %> <% result['id'] %></p>
-        <p><img src="<%=result['cover_image']%>" alt=""></p>
+        <p><img class="cover" src="<%=result['cover_image']%>" alt=""></p>
         
       <% end %>
     <% end %>

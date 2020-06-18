@@ -3,15 +3,20 @@ class AlbumsController < ApplicationController
     # if params[:query].present?
     #   @albums = Album.search_my_collection(params[:query])
     # else
-    
-      @recently_added = Album.recently_added
-    
-      search_word = params[:name]
-      sort = params[:sort]
-      @searched_albums = Album.search_in_collection(search_word, sort)
+    if sort = params[:sort]
+      case params[:sort]
+      when 'recently_added'
+        @albums = Album.recently_added
+      end
+    else
 
-      @albums = Album.all
+    # search_word = params[:name]
+    # sort = params[:sort]
+    # @searched_albums = Album.search_in_collection(search_word, sort)
+
+      @albums = Album.all.sort
       current_user
+    end
     
   end
 

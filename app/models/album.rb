@@ -20,15 +20,20 @@ class Album < ApplicationRecord
   #   end.sorted
   # end
     
-  scope :recently_added, -> { order(created_at: :desc)}
-
-  def self.search_in_collection(search_word,sort)
-    if sort == "artist"
-      Album.where(artist: search_word)
-    elsif sort == "genre"
-      Album.where(genre: search_word)
-    end
+  scope :recently_added, -> do (
+    where("created_at >=?", Time.now)
+    .order("created_at DESC"))
   end
+
+  # scope :recently_added, -> { where ("created_at >=?", Time.now)}
+
+  # def self.search_in_collection(search_word,sort)
+  #   if sort == "artist"
+  #     Album.where(artist: search_word)
+  #   elsif sort == "genre"
+  #     Album.where(genre: search_word)
+  #   end
+  # end
   
 
   # API CALLS

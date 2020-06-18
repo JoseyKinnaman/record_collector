@@ -1,13 +1,4 @@
-<%# FROM BACK END %>
-<%# <% if @albums.any? %>
-  <%# <%@albums.each do |album|%> %>
-    <%# <p>Album Name: <%= album.name %></p> %>
-    <%# Artist : <%= album.artist %> %>
-    <%# Cover Image: <%= album.cover_image %> %>
-  <%# <% end %> %>
-<%# <% else %> %>
-  <%# there are currently no albums to list! %>
-<%# <% end %> %> %>
+
 
 <%# FROM FRONT END %>
 <div class="back">
@@ -18,28 +9,25 @@
         <%if current_user %>
           <p> Welcome <%= current_user.email %></p>
             <%= image_tag "IMG_5530.jpg", class:"shelf" %>
-        <div class="options">
+        
 
-        <form action="" name="sort">
-          <input type="text">
-          <select id="scopes" onchange="window.location.href=this.options[this.selectedIndex].value">
-            <option value="/homepage" name="">Sort by date added</option>
-            <option value="" name="genre">Sort by genre</option>
-            <option value="" name="artist">Sort by artist name</option>
+        <div class="options">
+          <select id="scopes" name="scope" onchange="window.location.href=this.options[this.selectedIndex].value">
+            <option value="<%= albums_path %>" selected>Sort by ... </option>
+            <option value="<%= albums_path %>?sort=recently_added" name="date">Sort by date added</option>
+            <option value="<%= albums_path %>" name="genre">Sort by genre</option>
+            <option value="<%= albums_path %>" name="artist">Sort by artist name</option>
           </select>
-          <input type="submit" value="Submit">
-        </form>
+        </div>
+      
         <% else %>
           <p> Please log-in to see this page!</p>
         <% end %>
-            <%# form for pg_search %>
-        <%# <input type="text" name="query" id="query" placeholder="Search My Collection...">
-        <input type="submit" name="commit" value="Search"> %>
+         
 
     </aside>
 
     <main class="mainContent">
-      <%# <h1>Existing Records</h1> %>
       <br>
         <%if current_user.albums.any?%>
           <% current_user.albums.each do |album| %>
@@ -53,18 +41,19 @@
               </ul>
           <% end %>
         <% elsif %>
-          <% if @searched_albums.any? %>
-            <ul>
-              <% @searched_albums.each do |album| %>
-              <a href="<%=album.link%>" target="_blank"><img class="flex-item" class="cover" src="<%=album.cover_image%>" alt=""></a></li>
-              <h4><%= album.artist %></h4>
-              <p><%= album.name %></p>
-            </ul>
-              <% end%>
-            <% end %>
+          <% if @searched_albums.any? %> 
+            <ul> 
+              <% @searched_albums.each do |album| %> 
+              <a href="<%=album.link%>" target="_blank"><img class="flex-item" class="cover" src="<%=album.cover_image%>" alt=""></a></li> 
+              <h4><%= album.artist %></h4> 
+              <p><%= album.name %></p> 
+            </ul> 
+              <% end%> 
+            <% end %> 
         <% else %>
           <p>There are no albums yet.</p>
         <% end %>
+      </div>
     </main>
   </div>
 </div>
