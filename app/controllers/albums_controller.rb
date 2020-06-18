@@ -6,16 +6,15 @@ class AlbumsController < ApplicationController
     if sort = params[:sort]
       case params[:sort]
       when 'recently_added'
-        @albums = Album.recently_added
+        @albums = current_user.albums.recently_added
+      when 'by_album_name'
+        @albums =  current_user.albums.by_album_name
+      when 'by_artist_name'
+        @albums = current_user.albums.by_artist_name
       end
+    
     else
-
-    # search_word = params[:name]
-    # sort = params[:sort]
-    # @searched_albums = Album.search_in_collection(search_word, sort)
-
-      @albums = Album.all.sort
-      current_user
+      @albums =  current_user.albums
     end
     
   end
