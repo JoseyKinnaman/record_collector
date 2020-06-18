@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     # passwords: 'users/passwords',
     # unlocks: 'users/unlocks'
   }
+    # possible routes needed for pg_search
+  # resources :search_my_collection, only: [:index]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

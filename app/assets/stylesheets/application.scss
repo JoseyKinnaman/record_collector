@@ -16,26 +16,11 @@
 
 
 
-// img.shelf {
-//   opacity: 0.75;
-//   border-radius: 8px;
-//   max-width: 100%;
-//   height: auto;
-//   display: block;
-//   margin-top: auto;
-//   margin-left: auto;
-//   margin-right: auto;
-// }
-
-
 // .flex-item > a {
 //   color: #CFDBD5;
 // }
 
-// img.cover {
-//   border-radius: 8px;
-//   max-width: 100%;
-// }
+
 
 // ul {
 //   list-style: none;
@@ -170,7 +155,8 @@ body {
 // Jet #333533
 
 .flex-container {
-  justify-content: space-around;
+  width: 250px;
+  height: 250px;
 }
 
 .flex-item {
@@ -178,7 +164,6 @@ body {
   padding: 0px;
   width: 250px;
   height: 250px;
-  margin: 10px;
   color: #CFDBD5;
   font-weight: bold;
   font-size: 2em;
@@ -190,6 +175,22 @@ img {
   opacity: 0.75;
   border-radius: 8px;
   max-width: 150%;
+  height: auto;
+  display: block;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+} 
+
+img.cover {
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+img.shelf {
+  opacity: 0.75;
+  border-radius: 8px;
+  max-width: 100%;
   height: auto;
   display: block;
   margin-top: auto;
@@ -229,17 +230,17 @@ ul {
   border: 1px solid, white;
 }
 
-.container {
-  background: #F5CB5C;
-  padding: 15px;
-  margin: 75px;
-  color: #333533;
-  font-weight: bold;
-  font-family: 'MuseoModerno', cursive;
-  border-radius: 8px;
-  width: 250px;
-  height: 300px;
-}
+//  this class is not being used
+// .container {
+//   background: #F5CB5C;
+//   padding: 15px;
+//   margin: 75px;
+//   color: #333533;
+//   font-weight: bold;
+//   font-family: 'MuseoModerno', cursive;
+//   border-radius: 8px;
+//   width: 250px;
+// }
 
 .contentBody {
   display: flex;
@@ -253,7 +254,8 @@ ul {
   margin-bottom: 100px;
   padding: 15px;
   border-radius: 8px;
-  width: 20%;
+  max-width: 200px;
+  flex: 1;
   background-color: #CFDBD5;
   justify-content: space-evenly;
   text-align: center; 
@@ -265,13 +267,14 @@ ul {
 
 .mainContent {
   display: flex;
+  flex: 3;
+  flex-flow: row wrap;
   margin-top: 75px;
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 100px;
   padding: 15px;
   border-radius: 8px;
-  flex: 2;     
   overflow: auto;
   background-color: #F5CB5C;
   opacity: .75;
@@ -280,4 +283,8 @@ ul {
 
 .searchContent {
   background-color: #F5CB5C;
+}
+
+.back {
+  background-color: #333533;
 }
