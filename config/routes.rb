@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'homepage' => 'albums#homepage'
   resources :albums
   # devise_for :users
+  get '/' => 'albums#homepage'
   get '/search' => 'albums#search'
   get '/tracks/:id' => 'albums#tracks'
   post '/albums/:id' => 'albums#create'
