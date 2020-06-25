@@ -19,6 +19,7 @@ In the command line, type the following commands which will create the necessary
 * _$ rake db:migrate_
 * _$ rake db:test:prepare_
 * _$ rails s_
+* _or open here: https://record-collector-epiapp.herokuapp.com/_
 Now open a web browser and enter localhost:3000 in the address bar to view the project.
 
 
