@@ -1,30 +1,10 @@
 class Album < ApplicationRecord
   has_and_belongs_to_many(:users)
-
-  
-  # include PgSearch
-  # scope :sorted, ->{ order(name: :asc) }
-  # pg_search_scope :search, against: [:name, :artist, :genre], 
-  # using: {
-  #   tsearch: {
-  #     prefix: true,
-  #     normalization: 2
-  #   }
-  # }
-  #  ------ also for use with pg_search ---------
-  # def self.perform_search(keyword)
-  #   if keyword.present?
-  #     Album.search(keyword)
-  #   else
-  #     Album.all
-  #   end.sorted
-  # end
     
   scope :recently_added, -> do
     order("created_at DESC")
   end
 
-  # scope :recently_added, -> { where ("created_at >=?", Time.now)}
   scope :by_album_name, -> do 
     order("name ASC")
   end
@@ -97,19 +77,6 @@ class Album < ApplicationRecord
       results["album"]["image"][3]["#text"]
     end
   end
-
-
-  # # final_result = {name: , artist: results.artist, }
-  #   # two types for API calls will be artist, release title & genre?
-  # results.any?
-  #     results.each |result| do
-  #       result.
-  #       #deconstructing hashes returning 5 - 10 things instead of a million
-  #     end
-
-  #   end
-  # end     
-  # results = HTTParty.get("https://api.discogs.com/database/search?key=sgmHHrgiDDHlrTWxYFMA&secret=JuQudxvQYuidvkfzANEnlLBFfeUETfdx&type=artist&q=green day")
 end
 
 
