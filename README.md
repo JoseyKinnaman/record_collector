@@ -1,4 +1,4 @@
-# Record Organizer
+# ReCollector Organizer
 
 #### Epicodus: Ruby Group Project
 
